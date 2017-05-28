@@ -53,7 +53,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 password.contains("0") ) rulesPassed++;
 
 
-        //password cant be the same char repeated 
+        //password cant be the same char repeated
         char ch1 = password.charAt(0);
         for(int i = 1; i < password.length(); i++){
             if (password.charAt(i) != ch1) {
