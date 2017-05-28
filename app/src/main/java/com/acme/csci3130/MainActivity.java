@@ -29,7 +29,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        helloTxt.setText(txt.getText());
+        String password = txt.getText().toString();
+        helloTxt.setText("Password Strength: " + validate(password) + "/5");
         //btn.setText(txt.getText());
     }
 

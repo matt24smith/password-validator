@@ -40,7 +40,18 @@ public class SimpleEspressoTest {
         //Same thing but not using IDs
         //It does not makes much sense in this case
         onView(withText(textToFind)).check(matches(withText(textToFind)));
+
+
+
     }
+
+    public void validatePassword(){
+        //onView( withId(R.id.button)).perform(click());
+        onView(withId(R.id.helloText)).check(matches(withText("Password Strength: 5/5")));
+
+
+    }
+
 
 
 }
