@@ -27,8 +27,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
         helloTxt = (TextView) findViewById(R.id.helloText);
     }
 
-
-
     @Override
     public void onClick(View v) {
         helloTxt.setText(txt.getText());
@@ -39,6 +37,31 @@ public class MainActivity extends Activity implements View.OnClickListener {
         int rulesPassed = 0;
         if (!password.equals("password")) rulesPassed++;
         if (password.length() >= 8) rulesPassed++;
+
+        // password should not be all lower or uppercase
+        if (!password.toUpperCase().equals(password) && !password.toLowerCase().equals(password)) rulesPassed++;
+
+        if (password.contains("1") ||
+                password.contains("2") ||
+                password.contains("3") ||
+                password.contains("4") ||
+                password.contains("5") ||
+                password.contains("6") ||
+                password.contains("7") ||
+                password.contains("8") ||
+                password.contains("9") ||
+                password.contains("0") ) rulesPassed++;
+
+
+        //password cant be the same char repeated 
+        char ch1 = password.charAt(0);
+        for(int i = 1; i < password.length(); i++){
+            if (password.charAt(i) != ch1) {
+                rulesPassed++;
+                break;
+            }
+        }
+
 
         return rulesPassed;
     }
