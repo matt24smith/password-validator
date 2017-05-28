@@ -27,10 +27,20 @@ public class MainActivity extends Activity implements View.OnClickListener {
         helloTxt = (TextView) findViewById(R.id.helloText);
     }
 
+
+
     @Override
     public void onClick(View v) {
         helloTxt.setText(txt.getText());
         //btn.setText(txt.getText());
+    }
+
+    public int validate(String password){
+        int rulesPassed = 0;
+        if (!password.equals("password")) rulesPassed++;
+        if (password.length() >= 8) rulesPassed++;
+
+        return rulesPassed;
     }
 }
 
